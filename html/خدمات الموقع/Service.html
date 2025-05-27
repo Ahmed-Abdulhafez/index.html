@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خدمة العملاء - أبواب العرابا</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- style css -->
+    <link rel="stylesheet" href="/style/style.css" />
+    <style>
+      :root {
+        --primary-color: #2a5c82;
+        --secondary-color: #f4edd3;
+        --text-dark: #333;
+        --text-light: #fff;
+        --bg-light: #f8f9fa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-light);
+      }
+
+      /* الهيدر */
+      .customer-service-headers {
+        background: var(--primary-color);
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-light);
+      }
+
+      .service-hero {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .service-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      /* الأقسام الرئيسية */
+      .service-container {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+        display: grid;
+        gap: 2rem;
+      }
+
+      /* بطاقات الخدمات */
+      .service-cards {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .service-cards:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-category {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .service-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .service-item {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .service-item a {
+        color: var(--text-dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .service-item a:hover {
+        color: var(--primary-color);
+      }
+
+      /* الأسئلة الشائعة */
+      .faq-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-item {
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .faq-question {
+        padding: 1rem 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 1rem;
+      }
+
+      /* نموذج الاتصال */
+      .contact-form-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .submit-btn {
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: #1f4561;
+      }
+
+      /* الدردشة المباشرة */
+      .live-chat {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .service-container {
+          grid-template-columns: 1fr;
+        }
+
+        .service-hero h1 {
+          font-size: 2rem;
+        }
+
+        .live-chat {
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container" dir="ltr">
+      <header class="top-header">
+        <div class="social-media">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <div class="contact-info">
+          <div class="phone">
+            <i class="fa-solid fa-phone-flip"></i>
+            <a href="tel:+966920015723">+966 92 001 5723</a>
+          </div>
+          <div class="email">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:info@almoosadoors.com">info@almoosadoors.com</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- start navbar -->
+
+      <nav class="main-navigation">
+        <div class="nav-brand">
+          <a href="/main.html"><h1>مصنع ابواب العراب</h1></a>
+        </div>
+
+        <button class="hamburger-btn" aria-label="قائمة التنقل">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/main.html" class="nav-link active">
+              <i class="fas fa-home"></i>
+              الرئيسية
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <div class="dropdown-toggle">
+              <i class="fas fa-box-open"></i>
+              منتجاتنا
+              <i class="dropdown-arrow fas fa-angle-down"></i>
+            </div>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/html/صفحات المنتجات/درايش شتر.html" class="dropdown-item"
+                  ><i class="fa-solid fa-dungeon"></i>درايش شتر</a
+                >
+              </li>
+              <li>
+                <a href="/html/صفحات المنتجات/ابوب شتر.html" class="dropdown-item"
+                  ><i class="fa-solid fa-door-open"></i>ابواب شتر</a
+                >
+              </li>
+              <li>
+                <a href="/html/صفحات المنتجات/ابواب الرول.html" class="dropdown-item"
+                  ><i class="fa-solid fa-dungeon"></i>ابواب الرول</a
+                >
+              </li>
+              <li>
+                <a href="/html/صفحات المنتجات/مظلات وسواتر.html" class="dropdown-item"
+                  ><i class="fa-solid fa-umbrella-beach"></i>مظلات وسواتر</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/html/صفحات المنتجات/مكاين ابواب السحب.html"
+                  class="dropdown-item"
+                  ><i class="fa-solid fa-trailer"></i>مكاين ابواب السحب</a
+                >
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="/html/خدمات الموقع/prdact.html" class="dropdown-item"
+                  ><i class="fas fa-cubes"></i>جميع المنتجات</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="/html/خدمات الموقع/photo.html" class="nav-link">
+              <i class="fas fa-image"></i>
+              معرض الصور
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/html/خدمات الموقع/About us.html" class="nav-link">
+              <i class="fas fa-users"></i>
+              من نحن
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/html/خدمات الموقع/Contact-us.html" class="nav-link">
+              <i class="fas fa-phone-alt"></i>
+              اتصل بنا
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/html/خدمات الموقع/Service.html" class="nav-link">
+              <i class="fas fa-headset"></i>
+              خدمة العملاء
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- end navbar -->
+    </div>
+
+    <header class="customer-service-headers">
+      <div class="service-hero">
+        <h1>مركز خدمة العملاء</h1>
+        <p>نحن هنا لمساعدتك على مدار الساعة</p>
+      </div>
+    </header>
+
+    <main class="service-container">
+      <!-- قسم الخدمات السريعة -->
+      <section class="service-cards">
+        <div class="service-category">
+          <i class="fas fa-life-ring"></i>
+          <h2>الدعم الفني</h2>
+        </div>
+        <ul class="service-list">
+          <li class="service-item">
+            <a href="#">مشاكل في التركيب</a>
+            <i class="fas fa-chevron-left"></i>
+          </li>
+          <li class="service-item">
+            <a href="#">استفسارات الضمان</a>
+            <i class="fas fa-chevron-left"></i>
+          </li>
+          <li class="service-item">
+            <a href="#">دليل الاستخدام</a>
+            <i class="fas fa-chevron-left"></i>
+          </li>
+        </ul>
+      </section>
+
+      <!-- قسم الطلبات -->
+      <section class="service-cards">
+        <div class="service-category">
+          <i class="fas fa-shopping-cart"></i>
+          <h2>الطلبات والتوصيل</h2>
+        </div>
+        <ul class="service-list">
+          <li class="service-item">
+            <a href="#">تتبع الطلب</a>
+            <i class="fas fa-chevron-left"></i>
+          </li>
+          <li class="service-item">
+            <a href="#">تعديل الطلب</a>
+            <i class="fas fa-chevron-left"></i>
+          </li>
+          <li class="service-item">
+            <a href="#">سياسة الإرجاع</a>
+            <i class="fas fa-chevron-left"></i>
+          </li>
+        </ul>
+      </section>
+
+      <!-- الأسئلة الشائعة -->
+      <section class="faq-section">
+        <h2>الأسئلة المتكررة</h2>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>كيف يمكنني تتبع طلبي؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>يمكنك تتبع حالة طلبك من خلال الدخول إلى حسابك...</p>
+          </div>
+        </div>
+        <!-- إضافة المزيد من الأسئلة هنا -->
+      </section>
+
+      <!-- نموذج الاتصال -->
+      <section class="contact-form-section">
+        <h2>تواصل معنا</h2>
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-input" placeholder="الاسم الكامل" />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-input"
+              placeholder="البريد الإلكتروني"
+            />
+          </div>
+          <div class="form-group">
+            <select class="form-input">
+              <option>نوع الاستفسار</option>
+              <option>الطلبات</option>
+              <option>الدعم الفني</option>
+              <option>الشكاوى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-input"
+              rows="5"
+              placeholder="الرسالة"
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">إرسال الرسالة</button>
+        </form>
+      </section>
+
+      <!-- الدردشة المباشرة -->
+      <div class="live-chat">
+        <i class="fas fa-comment-dots"></i>
+        <span>الدردشة المباشرة</span>
+        <div class="status-dot"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <section class="footer-section" dir="rtl">
+        <div class="footer-container">
+          <!-- الشعار -->
+          <div class="footer-logo">
+            <img
+              src="/html/logo/logo-removebg-preview.png"
+              alt="شعار الشركة"
+              class="footer-logo-img"
+            />
+          </div>
+
+          <!-- قائمة التنقل -->
+          <nav class="footer-nav">
+            <div class="nav-column">
+              <h4 class="nav-title">روابط سريعة</h4>
+              <a href="#" class="nav-link">الرئيسية</a>
+              <a href="#" class="nav-link">من نحن</a>
+              <a href="#" class="nav-link">الخدمات</a>
+            </div>
+
+            <div class="nav-column">
+              <h4 class="nav-title">المزيد</h4>
+              <a href="#" class="nav-link">الأعمال</a>
+              <a href="#" class="nav-link">المدونة</a>
+              <a href="#" class="nav-link">اتصل بنا</a>
+            </div>
+          </nav>
+
+          <!-- معلومات الاتصال -->
+          <div class="footer-contact">
+            <h4 class="contact-title">ابقى على تواصل</h4>
+            <p class="contact-description">
+              اليمن - صنعاء
+              <br />
+              هاتف: +967 123 456 789
+              <br />
+              البريد الإلكتروني: info@example.com
+            </p>
+          </div>
+
+          <!-- وسائل التواصل الاجتماعي -->
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="فيسبوك">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="تويتر">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="إنستجرام">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="لينكدإن">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+
+          <!-- حقوق النشر -->
+          <div class="footer-copyright">
+            <p class="copyright-text">
+              © 2024 جميع الحقوق محفوظة لشركة أحمد الشيخ
+              <span class="separator">|</span>
+              تصميم وتطوير روميثيم
+            </p>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script src="/javascript/mian.js"></script>
+
+    <script>
+      // تفعيل الأسئلة المتكررة
+      document.querySelectorAll(".faq-question").forEach((item) => {
+        item.addEventListener("click", () => {
+          const answer = item.nextElementSibling;
+          answer.style.maxHeight = answer.style.maxHeight
+            ? null
+            : answer.scrollHeight + "px";
+          item.querySelector("i").classList.toggle("fa-rotate-180");
+        });
+      });
+
+      // إدارة الدردشة المباشرة
+      const chatButton = document.querySelector(".live-chat");
+      chatButton.addEventListener("click", () => {
+        // إضافة منطق فتح نافذة الدردشة هنا
+        alert("نظام الدردشة سيبدأ قريبًا...");
+      });
+    </script>
+  </body>
+</html>
