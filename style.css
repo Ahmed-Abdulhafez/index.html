@@ -2111,6 +2111,15 @@
   }
 }
 
+
+.atthment-section {
+  position: relative;
+  height: 50vh;
+  background-image: url(/pexels-29988955.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 /* Footer Styles */
 .footer {
   background: linear-gradient(to bottom, var(--primary-bg), var(--dark-bg));
