@@ -698,23 +698,24 @@
 
 @media (max-width: 768px) {
   .top-header {
-    flex-direction: column;
+    /* flex-direction: column;
     gap: 15px;
-    padding: 15px 20px;
+    padding: 15px 20px; */
+    display: none;
   }
 
-  .social-media {
+  /* .social-media {
     order: 2;
     justify-content: center;
     width: 100%;
     gap: 10px;
-  }
+  } */
 
-  .social-media a {
+  /* .social-media a {
     width: 25px;
     height: 25px;
     font-size: 14px;
-  }
+  } */
 
   .contact-info {
     order: 1;
