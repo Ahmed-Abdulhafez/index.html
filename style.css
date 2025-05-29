@@ -2111,13 +2111,144 @@
   }
 }
 
-
+/* تنسيق القسم الأساسي */
 .atthment-section {
   position: relative;
-  height: 50vh;
-  background-image: url(/pexels-29988955.jpg);
+  height: 70vh;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80");
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* طبقة تظليل خفيفة */
+.atthment-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* تنسيق الأيقونات */
+.icons-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  width: 300px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.icon-box:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-10px);
+}
+
+.icon-box i {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.icon-box:hover i {
+  color: #ffcc00;
+  transform: scale(1.2);
+}
+
+.icon-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.icon-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* تأثيرات بسيطة عند التحميل */
+.icon-box:nth-child(1) {
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+.icon-box:nth-child(2) {
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+.icon-box:nth-child(3) {
+  animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+  .icons-container {
+    gap: 20px;
+  }
+
+  .icon-box {
+    width: 160px;
+    padding: 20px;
+  }
+
+  .icon-box i {
+    font-size: 2.8rem;
+  }
+
+  .icon-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .icons-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .icon-box {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 /* Footer Styles */
