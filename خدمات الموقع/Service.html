@@ -9,7 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <!-- style css -->
-    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <style>
       :root {
         --primary-color: #2a5c82;
@@ -197,24 +197,46 @@
     </style>
   </head>
   <body>
-    <div class="header-container" dir="ltr">
+
+    <div class="header-container">
       <header class="top-header">
         <div class="social-media">
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
             <i class="fa-brands fa-youtube"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
             <i class="fa-brands fa-twitter"></i>
           </a>
           <a
             href="https://instagram.com"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
           >
             <i class="fa-brands fa-instagram"></i>
@@ -233,100 +255,120 @@
       </header>
 
       <!-- start navbar -->
-
       <nav class="main-navigation">
         <div class="nav-brand">
-          <a href="/main.html"><h1>مصنع ابواب العراب</h1></a>
+          <a href="/index.html" aria-label="الصفحة الرئيسية">
+            <h1>العراب</h1>
+          </a>
         </div>
 
-        <button class="hamburger-btn" aria-label="قائمة التنقل">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button
+          class="menu-toggle"
+          aria-label="فتح القائمة"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="/main.html" class="nav-link active">
-              <i class="fas fa-home"></i>
-              الرئيسية
-            </a>
-          </li>
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <h2>القائمة الرئيسية</h2>
+            <button class="close-sidebar" aria-label="إغلاق القائمة">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
 
-          <li class="nav-item dropdown">
-            <div class="dropdown-toggle">
-              <i class="fas fa-box-open"></i>
-              منتجاتنا
-              <i class="dropdown-arrow fas fa-angle-down"></i>
-            </div>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="/html/صفحات المنتجات/درايش شتر.html" class="dropdown-item"
-                  ><i class="fa-solid fa-dungeon"></i>درايش شتر</a
-                >
-              </li>
-              <li>
-                <a href="/html/صفحات المنتجات/ابوب شتر.html" class="dropdown-item"
-                  ><i class="fa-solid fa-door-open"></i>ابواب شتر</a
-                >
-              </li>
-              <li>
-                <a href="/html/صفحات المنتجات/ابواب الرول.html" class="dropdown-item"
-                  ><i class="fa-solid fa-dungeon"></i>ابواب الرول</a
-                >
-              </li>
-              <li>
-                <a href="/html/صفحات المنتجات/مظلات وسواتر.html" class="dropdown-item"
-                  ><i class="fa-solid fa-umbrella-beach"></i>مظلات وسواتر</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/html/صفحات المنتجات/مكاين ابواب السحب.html"
-                  class="dropdown-item"
-                  ><i class="fa-solid fa-trailer"></i>مكاين ابواب السحب</a
-                >
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="/html/خدمات الموقع/prdact.html" class="dropdown-item"
-                  ><i class="fas fa-cubes"></i>جميع المنتجات</a
-                >
-              </li>
-            </ul>
-          </li>
+          <ul class="sidebar-nav">
+            <li class="sidebar-item">
+              <a href="/index.html" class="sidebar-link active">
+                <i class="fas fa-home"></i>
+                <span>الرئيسية</span>
+              </a>
+            </li>
 
-          <li class="nav-item">
-            <a href="/html/خدمات الموقع/photo.html" class="nav-link">
-              <i class="fas fa-image"></i>
-              معرض الصور
-            </a>
-          </li>
+            <li class="sidebar-item">
+              <button class="sidebar-dropdown-btn" aria-expanded="false">
+                <div class="link-content">
+                  <i class="fas fa-box-open"></i>
+                  <span>منتجاتنا</span>
+                </div>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+              </button>
+              <ul class="sidebar-dropdown-menu" aria-label="قائمة المنتجات">
+                <li>
+                  <a href="/صفحات المنتجات/ابوب شتر.html">
+                    <i class="fa-solid fa-door-open"></i>
+                    <span>ابواب شتر</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/صفحات المنتجات/ابواب الرول.html">
+                    <i class="fa-solid fa-dungeon"></i>
+                    <span>ابواب الرول</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/صفحات المنتجات/درايش شتر.html">
+                    <i class="fa-solid fa-window-maximize"></i>
+                    <span>درايش شتر</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/صفحات المنتجات/مظلات وسواتر.html">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <span>مظلات وسواتر</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/صفحات المنتجات/مكاين ابواب السحب.html">
+                    <i class="fa-solid fa-cog"></i>
+                    <span>مكاين ابواب السحب</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/خدمات الموقع/prdact.html" class="view-all">
+                    <i class="fas fa-cubes"></i>
+                    <span>عرض جميع المنتجات</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
 
-          <li class="nav-item">
-            <a href="/html/خدمات الموقع/About us.html" class="nav-link">
-              <i class="fas fa-users"></i>
-              من نحن
-            </a>
-          </li>
+            <li class="sidebar-item">
+              <a href="/خدمات الموقع/photo.html" class="sidebar-link">
+                <i class="fas fa-image"></i>
+                <span>معرض الصور</span>
+              </a>
+            </li>
 
-          <li class="nav-item">
-            <a href="/html/خدمات الموقع/Contact-us.html" class="nav-link">
-              <i class="fas fa-phone-alt"></i>
-              اتصل بنا
-            </a>
-          </li>
+            <li class="sidebar-item">
+              <a href="/خدمات الموقع/About us.html" class="sidebar-link">
+                <i class="fas fa-users"></i>
+                <span>من نحن</span>
+              </a>
+            </li>
 
-          <li class="nav-item">
-            <a href="/html/خدمات الموقع/Service.html" class="nav-link">
-              <i class="fas fa-headset"></i>
-              خدمة العملاء
-            </a>
-          </li>
-        </ul>
+            <li class="sidebar-item">
+              <a href="/خدمات الموقع/Contact-us.html" class="sidebar-link">
+                <i class="fas fa-phone-alt"></i>
+                <span>اتصل بنا</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a href="/خدمات الموقع/Service.html" class="sidebar-link">
+                <i class="fas fa-headset"></i>
+                <span>خدمة العملاء</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
       </nav>
-      <!-- end navbar -->
     </div>
+
+    <!-- end header -->
 
     <header class="customer-service-headers">
       <div class="service-hero">
@@ -436,74 +478,107 @@
       </div>
     </main>
 
-    <footer class="site-footer">
-      <section class="footer-section" dir="rtl">
-        <div class="footer-container">
-          <!-- الشعار -->
-          <div class="footer-logo">
+    <!-- Start Footer -->
+    <footer class="footer" dir="rtl">
+      <div class="footer-waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="brand-info">
             <img
-              src="/html/logo/logo-removebg-preview.png"
-              alt="شعار الشركة"
-              class="footer-logo-img"
+              src="/photo/logo/logo-removebg-preview.png"
+              alt="شعار مصنع ابواب العراب"
+              class="footer-logo"
             />
+            <h2>مصنع ابواب العراب</h2>
+          </div>
+          <p class="brand-desc">
+            نقدم حلولاً متكاملة في مجال الأبواب والأنظمة الأوتوماتيكية بجودة
+            عالية وخبرة تمتد لسنوات في السوق السعودي.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="/main.html">الرئيسية</a></li>
+              <li><a href="/html/خدمات الموقع/About us.html">من نحن</a></li>
+              <li><a href="/html/خدمات الموقع/prdact.html">منتجاتنا</a></li>
+              <li><a href="/html/خدمات الموقع/photo.html">معرض الصور</a></li>
+            </ul>
           </div>
 
-          <!-- قائمة التنقل -->
-          <nav class="footer-nav">
-            <div class="nav-column">
-              <h4 class="nav-title">روابط سريعة</h4>
-              <a href="#" class="nav-link">الرئيسية</a>
-              <a href="#" class="nav-link">من نحن</a>
-              <a href="#" class="nav-link">الخدمات</a>
-            </div>
-
-            <div class="nav-column">
-              <h4 class="nav-title">المزيد</h4>
-              <a href="#" class="nav-link">الأعمال</a>
-              <a href="#" class="nav-link">المدونة</a>
-              <a href="#" class="nav-link">اتصل بنا</a>
-            </div>
-          </nav>
-
-          <!-- معلومات الاتصال -->
-          <div class="footer-contact">
-            <h4 class="contact-title">ابقى على تواصل</h4>
-            <p class="contact-description">
-              اليمن - صنعاء
-              <br />
-              هاتف: +967 123 456 789
-              <br />
-              البريد الإلكتروني: info@example.com
-            </p>
+          <div class="footer-section">
+            <h3>منتجاتنا</h3>
+            <ul>
+              <li>
+                <a href="/html/صفحات المنتجات/ابوب شتر.html">ابواب شتر</a>
+              </li>
+              <li>
+                <a href="/html/صفحات المنتجات/ابواب الرول.html">ابواب الرول</a>
+              </li>
+              <li>
+                <a href="/html/صفحات المنتجات/درايش شتر.html">درايش شتر</a>
+              </li>
+              <li>
+                <a href="/html/صفحات المنتجات/مظلات وسواتر.html"
+                  >مظلات وسواتر</a
+                >
+              </li>
+            </ul>
           </div>
 
-          <!-- وسائل التواصل الاجتماعي -->
-          <div class="footer-social">
-            <a href="#" class="social-link" aria-label="فيسبوك">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="تويتر">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="إنستجرام">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="لينكدإن">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-
-          <!-- حقوق النشر -->
-          <div class="footer-copyright">
-            <p class="copyright-text">
-              © 2024 جميع الحقوق محفوظة لشركة أحمد الشيخ
-              <span class="separator">|</span>
-              تصميم وتطوير روميثيم
-            </p>
+          <div class="footer-section">
+            <h3>تواصل معنا</h3>
+            <ul class="contact-inf">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>المملكة العربية السعودية</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+966920015723">+966 92 001 5723</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@almoosadoors.com">info@almoosadoors.com</a>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span>السبت - الخميس: 9:00 صباحاً - 6:00 مساءً</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="فيسبوك">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="تويتر">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="انستغرام">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="لينكد إن">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <div class="copyright">
+          <p>© 2024 جميع الحقوق محفوظة لمصنع ابواب العراب</p>
+        </div>
+      </div>
     </footer>
+    <!-- End Footer -->
 
     <script src="/javascript/mian.js"></script>
 
