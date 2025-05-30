@@ -195,6 +195,8 @@
         }
       }
     </style>
+        // ... existing code ...
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
   <body>
 
@@ -244,8 +246,8 @@
         </div>
         <div class="contact-info">
           <div class="phone">
+            <a href="tel:+966 053 336 5851">+966 053 336 5851</a>
             <i class="fa-solid fa-phone-flip"></i>
-            <a href="tel:+966920015723">+966 92 001 5723</a>
           </div>
           <div class="email">
             <i class="fa-regular fa-envelope"></i>
@@ -427,48 +429,90 @@
         <h2>الأسئلة المتكررة</h2>
         <div class="faq-item">
           <div class="faq-question">
-            <span>كيف يمكنني تتبع طلبي؟</span>
+            <span>ما هي مدة الضمان على منتجاتكم؟</span>
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>يمكنك تتبع حالة طلبك من خلال الدخول إلى حسابك...</p>
+            <p>نقدم ضماناً شاملاً لمدة سنتين على جميع منتجاتنا يغطي عيوب التصنيع والتركيب، مع إمكانية تمديد الضمان لفترات إضافية حسب نوع المنتج.</p>
           </div>
         </div>
-        <!-- إضافة المزيد من الأسئلة هنا -->
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>كم تستغرق عملية التركيب؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>تختلف مدة التركيب حسب نوع المنتج وحجمه، لكن بشكل عام تستغرق عملية تركيب الأبواب من يوم إلى ثلاثة أيام، بينما قد تستغرق المظلات والسواتر الكبيرة من 3-5 أيام عمل.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>هل تقدمون خدمات الصيانة الدورية؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>نعم، نقدم خدمات الصيانة الدورية لجميع منتجاتنا بموجب عقود صيانة سنوية تضمن الأداء الأمثل والعمر الطويل للمنتج. تشمل الصيانة فحص الأجزاء الميكانيكية والكهربائية، تشحيم المفصلات، ضبط المحركات، وإصلاح أي مشاكل محتملة.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>ما هي المواد المستخدمة في صناعة منتجاتكم؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>نستخدم مواد عالية الجودة في جميع منتجاتنا، بما في ذلك الألمنيوم المعالج، الفولاذ المقاوم للصدأ، والأقمشة المقاومة للعوامل الجوية للمظلات. جميع المواد مختارة بعناية لتناسب الظروف المناخية في المملكة العربية السعودية وتدوم لسنوات طويلة.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>هل تقدمون خدمات التصميم المخصص؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>نعم، نقدم خدمات التصميم المخصص لجميع منتجاتنا لتلبية احتياجات العملاء الخاصة. يمكننا تصميم وتنفيذ الأبواب والمظلات بأي مقاس أو شكل أو لون حسب رغبة العميل، مع الحفاظ على أعلى معايير الجودة والمتانة.</p>
+          </div>
+        </div>
       </section>
 
       <!-- نموذج الاتصال -->
-      <section class="contact-form-section">
-        <h2>تواصل معنا</h2>
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-input" placeholder="الاسم الكامل" />
-          </div>
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-input"
-              placeholder="البريد الإلكتروني"
-            />
-          </div>
-          <div class="form-group">
-            <select class="form-input">
-              <option>نوع الاستفسار</option>
-              <option>الطلبات</option>
-              <option>الدعم الفني</option>
-              <option>الشكاوى</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-input"
-              rows="5"
-              placeholder="الرسالة"
-            ></textarea>
-          </div>
-          <button type="submit" class="submit-btn">إرسال الرسالة</button>
-        </form>
-      </section>
+<!-- نموذج الاتصال -->
+<section class="contact-form-section">
+  <h2>تواصل مع فريق خدمة العملاء</h2>
+  <p>نحن هنا لمساعدتك في أي استفسار أو طلب. يرجى ملء النموذج أدناه وسنقوم بالرد عليك في أقرب وقت ممكن.</p>
+  <form id="serviceContactForm">
+    <div class="form-group">
+      <input type="text" class="form-input" name="user_name" placeholder="الاسم الكامل" required />
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-input" name="user_email" placeholder="البريد الإلكتروني" required />
+    </div>
+    <div class="form-group">
+      <input type="tel" class="form-input" name="user_phone" placeholder="رقم الهاتف" />
+    </div>
+    <div class="form-group">
+      <select class="form-input" name="inquiry_type" required>
+        <option value="" disabled selected>نوع الاستفسار</option>
+        <option value="technical">الدعم الفني</option>
+        <option value="order">استفسار عن طلب</option>
+        <option value="quote">طلب عرض سعر</option>
+        <option value="maintenance">طلب صيانة</option>
+        <option value="complaint">شكوى</option>
+        <option value="other">أخرى</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <textarea class="form-input" name="message" rows="5" placeholder="تفاصيل الرسالة" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">إرسال الرسالة</button>
+    <div class="success-message" style="display: none; color: green; margin-top: 15px; text-align: center;">
+      تم إرسال رسالتك بنجاح! سنرد عليك خلال 24 ساعة
+    </div>
+  </form>
+</section>
 
       <!-- الدردشة المباشرة -->
       <div class="live-chat">
@@ -539,9 +583,9 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <span>المملكة العربية السعودية</span>
               </li>
-              <li>
+              <li dir="ltr" style="display: flex; justify-content: flex-end;">
+                <a href="tel:+966 053 336 5851">+966 053 336 5851</a>
                 <i class="fas fa-phone"></i>
-                <a href="tel:+966920015723">+966 92 001 5723</a>
               </li>
               <li>
                 <i class="fas fa-envelope"></i>
@@ -598,6 +642,54 @@
         // إضافة منطق فتح نافذة الدردشة هنا
         alert("نظام الدردشة سيبدأ قريبًا...");
       });
+
+
+
+        // تهيئة EmailJS
+  (function() {
+    // أدخل معرف المستخدم الخاص بك من لوحة تحكم EmailJS
+    emailjs.init("service_2qj46mm");
+  })();
+
+  // إضافة مستمع حدث لنموذج الاتصال
+  document.getElementById("serviceContactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // إظهار رسالة تحميل أو تعطيل زر الإرسال
+    const submitBtn = this.querySelector(".submit-btn");
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = "جاري الإرسال...";
+    submitBtn.disabled = true;
+    
+    // إرسال النموذج باستخدام EmailJS
+    // استبدل "YOUR_SERVICE_ID" و "YOUR_TEMPLATE_ID" بالقيم الخاصة بك من لوحة تحكم EmailJS
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+      .then(function() {
+        // إظهار رسالة النجاح
+        const successMessage = document.querySelector(".success-message");
+        successMessage.style.display = "block";
+        
+        // إعادة تعيين النموذج
+        document.getElementById("serviceContactForm").reset();
+        
+        // إخفاء رسالة النجاح بعد 5 ثوان
+        setTimeout(function() {
+          successMessage.style.display = "none";
+        }, 5000);
+        
+        // إعادة زر الإرسال إلى حالته الأصلية
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      }, function(error) {
+        // إظهار رسالة خطأ
+        alert("حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.");
+        console.error("خطأ في إرسال النموذج:", error);
+        
+        // إعادة زر الإرسال إلى حالته الأصلية
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      });
+  });
     </script>
   </body>
 </html>

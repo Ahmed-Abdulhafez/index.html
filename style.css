@@ -132,7 +132,9 @@
   flex-wrap: wrap;
   text-decoration: none;
 }
-
+.contact-info .phone {
+  direction: ltr;
+}
 .phone,
 .email {
   display: flex;
