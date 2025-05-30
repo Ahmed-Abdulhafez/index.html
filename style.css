@@ -2111,6 +2111,8 @@
   }
 }
 
+    /* <!-- start atthment-section --> */
+
 /* تنسيق القسم الأساسي */
 .atthment-section {
   position: relative;
@@ -2156,7 +2158,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 35px;
+  padding: 25px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
   border-radius: 15px;
@@ -2172,13 +2174,13 @@
 
 .icon-box i {
   font-size: 3.5rem;
-  color: white;
+  color: #ffcc00;
   margin-bottom: 20px;
   transition: all 0.3s ease;
 }
 
 .icon-box:hover i {
-  color: #ffcc00;
+  /* color: #ffcc00; */
   transform: scale(1.2);
 }
 
@@ -2225,6 +2227,9 @@
     padding: 40px 0;
     height: auto;
   }
+    .icon-subtitle{
+    display: none;
+  }
   .icons-container {
     gap: 20px;
   }
@@ -2244,6 +2249,9 @@
 }
 
 @media (max-width: 480px) {
+  .icon-subtitle{
+    display: none;
+  }
   .icons-container {
     flex-direction: column;
     align-items: center;
@@ -2252,9 +2260,11 @@
 
   .icon-box {
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
   }
 }
+
+    /* <!-- end atthment-section --> */
 
 /* Footer Styles */
 .footer {
