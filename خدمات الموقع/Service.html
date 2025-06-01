@@ -30,7 +30,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/style/common.css" />
     <link rel="stylesheet" href="/style.css" />
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({ publicKey: "iop1kyrIuMCwuFOpB" });
+        })();
+    </script>
     <style>
+      
       :root {
         --primary-color: #2a5c82;
         --text-dark: #333;
@@ -47,6 +55,7 @@
 
       body {
         background-color: var(--bg-light);
+        width: 100%;
       }
 
       /* الهيدر */
@@ -58,7 +67,7 @@
       }
 
       .service-hero {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
       }
 
@@ -69,7 +78,7 @@
 
       /* الأقسام الرئيسية */
       .service-container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 3rem auto;
         padding: 0 1rem;
         display: grid;
@@ -104,40 +113,303 @@
         padding: 0 1rem;
       }
 
-      /* نموذج الاتصال */
-      .contact-form-section {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-input {
-        width: 100%;
-        padding: 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1rem;
-      }
-
-      .submit-btn {
-        background: var(--primary-color);
-        color: white;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s ease;
-      }
-
-      .submit-btn:hover {
-        background: #1f4561;
-      }
-
+        .containe {
+          
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contact-bo {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .contact-bo::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .contact-bo::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--secondary), var(--secondary-dark));
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .left {
+            background: linear-gradient(rgba(142, 68, 173, 0.8), rgba(52, 152, 219, 0.8)), 
+                         url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1470&auto=format&fit=crop') no-repeat center;
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 30px;
+            color: white;
+            position: relative;
+        }
+        
+        .left::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+        
+        .left-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .left h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .left p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+        
+        .contact-inf {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .info-ite {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            text-align: right;
+        }
+        
+        .info-ite i {
+            font-size: 1.5rem;
+            color: #fff;
+            min-width: 30px;
+        }
+        
+        .info-tex {
+            flex: 1;
+        }
+        
+        .info-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .info-tex p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .right {
+            padding: 40px 30px;
+            position: relative;
+        }
+        
+        .right h2 {
+            position: relative;
+            padding: 0 0 15px;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .right h2::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 4px;
+            width: 80px;
+            border-radius: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .form-grou {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-input {
+            width: 100%;
+            border: 2px solid transparent;
+            outline: none;
+            background-color: var(--light);
+            padding: 15px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            color: var(--dark);
+        }
+        
+        .form-input:focus {
+            border: 2px solid var(--primary);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.2);
+        }
+        
+        .form-input:hover {
+            background-color: #eaeef5;
+        }
+        
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        select.form-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238e44ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 45px;
+        }
+        
+        .submit-bt {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .submit-bt:hover {
+            background: linear-gradient(to right, var(--primary-dark), #5b2c71);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(142, 68, 173, 0.6);
+        }
+        
+        .submit-bt:active {
+            transform: translateY(1px);
+        }
+        
+        .submit-btn i {
+            margin-left: 8px;
+        }
+          
+        .success-messag {
+            color: var(--success);
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            padding: 12px;
+            background-color: rgba(39, 174, 96, 0.1);
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media screen and (max-width: 900px) {
+            .contact-bo {
+                grid-template-columns: 1fr;
+            }
+            
+            .left {
+                height: auto;
+                padding: 30px 20px;
+            }
+            
+            .left h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-inf {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 100%;
+            }
+            
+            .info-ite {
+                width: calc(50% - 10px);
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .contact-bo {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
+            
+            .info-ite {
+                width: 100%;
+            }
+            
+            .right {
+                padding: 30px 20px;
+            }
+            
+        }
+        
+        .required::after {
+            content: " *";
+            color: #e74c3c;
+        }
       /* الدردشة المباشرة */
       .live-chat {
         position: fixed;
@@ -170,13 +442,6 @@
         }
       }
     </style>
-    <!-- // ... existing code ... -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("jUeFS3NozGRl4BX92_PLr"); // ← استبدلها بمفتاحك العام
-  })();
-</script>
 
   </head>
   <body>
@@ -184,7 +449,7 @@
       <header class="top-header">
         <div class="social-media">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/share/1AnzrrB2ZA/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -439,77 +704,102 @@
 
       <!-- نموذج الاتصال -->
 
-      <section class="contact-form-section">
-        <h2>تواصل مع فريق خدمة العملاء</h2>
-        <p>
-          نحن هنا لمساعدتك في أي استفسار أو طلب. يرجى ملء النموذج أدناه وسنقوم
-          بالرد عليك في أقرب وقت ممكن.
-        </p>
-        <form onsubmit="sendEmail(); reset(); return false; " >
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-input"
-              id="name"
-              name="user_name"
-              placeholder="الاسم الكامل"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="email"
-              id="email"
-              class="form-input"
-              name="user_email"
-              placeholder="البريد الإلكتروني"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="tel"
-              id="tel"
-              class="form-input"
-              name="user_phone"
-              placeholder="رقم الهاتف"
-            />
-          </div>
-          <div class="form-group">
-            <select class="form-input" id="select" name="inquiry_type" required>
-              <option value="" disabled selected>نوع الاستفسار</option>
-              <option value="technical">الدعم الفني</option>
-              <option value="order">استفسار عن طلب</option>
-              <option value="quote">طلب عرض سعر</option>
-              <option value="maintenance">طلب صيانة</option>
-              <option value="complaint">شكوى</option>
-              <option value="other">أخرى</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <textarea
-              class="form-input"
-              name="message"
-              id="message"
-              rows="5"
-              placeholder="تفاصيل الرسالة"
-              required
-            ></textarea>
-          </div>
-          <button type="submit" id="submit" class="submit-btn">إرسال الرسالة</button>
-          <div
-            class="success-message"
-            style="
-              display: none;
-              color: green;
-              margin-top: 15px;
-              text-align: center;
-            "
-          >
-            تم إرسال رسالتك بنجاح! سنرد عليك خلال 24 ساعة
-          </div>
-        </form>
-      </section>
+    <div class="containe">
+        <div class="contact-bo">
+            <div class="left">
+                <div class="left-content">
+                    <h1>اتصل بنا</h1>
+                    <p>يسعدنا تواصلك معنا! أخبرنا بما يدور في ذهنك، وسنكون سعداء بالرد عليك في أقرب وقت ممكن.</p>
+                    
+                    <div class="contact-inf">
+                        <div class="info-ite">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-tex">
+                                <h3>العنوان</h3>
+                                <p>الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-ite">
+                            <i class="fas fa-phone"></i>
+                            <div class="info-tex">
+                                <h3>الهاتف</h3>
+                                <p>+966 55 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-ite">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-tex">
+                                <h3>البريد الإلكتروني</h3>
+                                <p>contact@hamza.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right">
+                <h2>أرسل رسالة</h2>
+                <form id="contactForm" onsubmit="sendEmail(event)">
+                    <div class="form-grou">
+                        <input
+                            type="text"
+                            class="form-input"
+                            id="name"
+                            name="user_name"
+                            placeholder="الاسم الكامل"
+                            required
+                        />
+                    </div>
+                    <div class="form-grou">
+                        <input
+                            type="email"
+                            id="email"
+                            class="form-input"
+                            name="user_email"
+                            placeholder="البريد الإلكتروني"
+                            required
+                        />
+                    </div>
+                    <div class="form-grou">
+                        <input
+                            type="tel"
+                            id="tel"
+                            class="form-input"
+                            name="user_phone"
+                            placeholder="رقم الهاتف"
+                        />
+                    </div>
+                    <div class="form-grou">
+                        <select class="form-input" id="select" name="inquiry_type" required>
+                            <option value="" disabled selected>نوع الاستفسار</option>
+                            <option value="الدعم الفني">الدعم الفني</option>
+                            <option value="استفسار عن طلب">استفسار عن طلب</option>
+                            <option value="طلب عرض سعر ">طلب عرض سعر</option>
+                            <option value="طلب صيانة">طلب صيانة</option>
+                            <option value="شكوي">شكوى</option>
+                            <option value="">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-grou">
+                        <textarea
+                            class="form-input"
+                            name="message"
+                            id="message"
+                            rows="5"
+                            placeholder="تفاصيل الرسالة"
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="submit-bt">
+                        <i class="fas fa-paper-plane"></i> إرسال الرسالة
+                    </button>
+                    <div class="success-messag" id="successMessage">
+                        تم إرسال رسالتك بنجاح! سنرد عليك خلال 24 ساعة
+                    </div>
+                </form>
+                
 
       <!-- الدردشة المباشرة -->
       <div class="live-chat">
@@ -602,7 +892,7 @@
 
       <div class="footer-bottom">
         <div class="social-links">
-          <a href="#" class="social-link" aria-label="فيسبوك">
+          <a href="https://www.facebook.com/share/1AnzrrB2ZA/" class="social-link" aria-label="فيسبوك">
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="#" class="social-link" aria-label="تويتر">
@@ -646,22 +936,56 @@
 
 
 
-        function sendEmail() {
-    emailjs.send("service_2qj46mm", "template_cgtt6xa", {
-      user_name: document.getElementById("name").value,
-      user_email: document.getElementById("email").value,
-      user_phone: document.getElementById("tel").value,
-      inquiry_type: document.getElementById("select").value,
-      message: document.getElementById("message").value,
-    })
-    .then(function(response) {
-        console.log("SUCCESS!", response.status, response.text);
-        document.querySelector(".success-message").style.display = "block";
-    }, function(error) {
-        console.log("FAILED...", error);
-        alert("حدث خطأ أثناء الإرسال، حاول مرة أخرى.");
-    });
-  }
+         function sendEmail(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('tel').value;
+            const inquiryType = document.getElementById('select').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !inquiryType || !message) {
+                alert('الرجاء ملء جميع الحقول المطلوبة');
+                return;
+            }
+            
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('الرجاء إدخال بريد إلكتروني صحيح');
+                return;
+            }
+            
+            const emailParams = {
+                user_name: name,
+                user_email: email,
+                user_phone: phone,
+                inquiry_type: inquiryType,
+                message: message
+            };
+            
+            const serviceID = "service_q11ju7n";
+            const templateID = "template_lvxklyh";
+            
+            emailjs.send(serviceID, templateID, emailParams)
+                .then(() => {
+                    // إعادة تعيين النموذج
+                    document.getElementById('contactForm').reset();
+                    
+                    // إظهار رسالة النجاح
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.style.display = 'block';
+                    
+                    // إخفاء الرسالة بعد 5 ثواني
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                })
+                .catch((error) => {
+                    console.error('Error sending email:', error);
+                    alert('حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى.');
+                });
+        }
     </script>
   </body>
 </html>
