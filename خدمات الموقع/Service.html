@@ -171,10 +171,13 @@
       }
     </style>
     <!-- // ... existing code ... -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("jUeFS3NozGRl4BX92_PLr"); // ← استبدلها بمفتاحك العام
+  })();
+</script>
+
   </head>
   <body>
     <div class="header-container">
@@ -228,7 +231,7 @@
           </div>
           <div class="email">
             <i class="fa-regular fa-envelope"></i>
-            <a href="mailto:info@almoosadoors.com">info@almoosadoors.com</a>
+                <a href="mailto:alarrab.ksa0@gmail.com">alarrab.ksa0@gmail.com</a>
           </div>
         </div>
       </header>
@@ -442,11 +445,12 @@
           نحن هنا لمساعدتك في أي استفسار أو طلب. يرجى ملء النموذج أدناه وسنقوم
           بالرد عليك في أقرب وقت ممكن.
         </p>
-        <form id="serviceContactForm">
+        <form onsubmit="sendEmail(); reset(); return false; " >
           <div class="form-group">
             <input
               type="text"
               class="form-input"
+              id="name"
               name="user_name"
               placeholder="الاسم الكامل"
               required
@@ -455,6 +459,7 @@
           <div class="form-group">
             <input
               type="email"
+              id="email"
               class="form-input"
               name="user_email"
               placeholder="البريد الإلكتروني"
@@ -464,13 +469,14 @@
           <div class="form-group">
             <input
               type="tel"
+              id="tel"
               class="form-input"
               name="user_phone"
               placeholder="رقم الهاتف"
             />
           </div>
           <div class="form-group">
-            <select class="form-input" name="inquiry_type" required>
+            <select class="form-input" id="select" name="inquiry_type" required>
               <option value="" disabled selected>نوع الاستفسار</option>
               <option value="technical">الدعم الفني</option>
               <option value="order">استفسار عن طلب</option>
@@ -484,12 +490,13 @@
             <textarea
               class="form-input"
               name="message"
+              id="message"
               rows="5"
               placeholder="تفاصيل الرسالة"
               required
             ></textarea>
           </div>
-          <button type="submit" class="submit-btn">إرسال الرسالة</button>
+          <button type="submit" id="submit" class="submit-btn">إرسال الرسالة</button>
           <div
             class="success-message"
             style="
@@ -582,7 +589,7 @@
               </li>
               <li>
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:info@almoosadoors.com">info@almoosadoors.com</a>
+                <a href="mailto:alarrab.ksa0@gmail.com">alarrab.ksa0@gmail.com</a>
               </li>
               <li>
                 <i class="fas fa-clock"></i>
@@ -636,55 +643,25 @@
         alert("نظام الدردشة سيبدأ قريبًا...");
       });
 
-      // تهيئة EmailJS
-      (function () {
-        // أدخل معرف المستخدم الخاص بك من لوحة تحكم EmailJS
-        emailjs.init("service_2qj46mm");
-      })();
 
-      // إضافة مستمع حدث لنموذج الاتصال
-      document
-        .getElementById("serviceContactForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
 
-          // إظهار رسالة تحميل أو تعطيل زر الإرسال
-          const submitBtn = this.querySelector(".submit-btn");
-          const originalBtnText = submitBtn.textContent;
-          submitBtn.textContent = "جاري الإرسال...";
-          submitBtn.disabled = true;
 
-          // إرسال النموذج باستخدام EmailJS
-          // استبدل "YOUR_SERVICE_ID" و "YOUR_TEMPLATE_ID" بالقيم الخاصة بك من لوحة تحكم EmailJS
-          emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(
-            function () {
-              // إظهار رسالة النجاح
-              const successMessage = document.querySelector(".success-message");
-              successMessage.style.display = "block";
-
-              // إعادة تعيين النموذج
-              document.getElementById("serviceContactForm").reset();
-
-              // إخفاء رسالة النجاح بعد 5 ثوان
-              setTimeout(function () {
-                successMessage.style.display = "none";
-              }, 5000);
-
-              // إعادة زر الإرسال إلى حالته الأصلية
-              submitBtn.textContent = originalBtnText;
-              submitBtn.disabled = false;
-            },
-            function (error) {
-              // إظهار رسالة خطأ
-              alert("حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.");
-              console.error("خطأ في إرسال النموذج:", error);
-
-              // إعادة زر الإرسال إلى حالته الأصلية
-              submitBtn.textContent = originalBtnText;
-              submitBtn.disabled = false;
-            }
-          );
-        });
+        function sendEmail() {
+    emailjs.send("service_2qj46mm", "template_cgtt6xa", {
+      user_name: document.getElementById("name").value,
+      user_email: document.getElementById("email").value,
+      user_phone: document.getElementById("tel").value,
+      inquiry_type: document.getElementById("select").value,
+      message: document.getElementById("message").value,
+    })
+    .then(function(response) {
+        console.log("SUCCESS!", response.status, response.text);
+        document.querySelector(".success-message").style.display = "block";
+    }, function(error) {
+        console.log("FAILED...", error);
+        alert("حدث خطأ أثناء الإرسال، حاول مرة أخرى.");
+    });
+  }
     </script>
   </body>
 </html>

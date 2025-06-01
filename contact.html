@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>نموذج الاتصال</title>
+
+  <!-- EmailJS Library -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("6f8xFaUmu0lAn3d0s"); // مفتاحك العام
+    })();
+  </script>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      background-color: #5a4fcf;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #443ab7;
+    }
+
+    .success-message {
+      display: none;
+      color: green;
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <form onsubmit="sendEmail(); return false;">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-input"
+        id="name"
+        name="user_name"
+        placeholder="الاسم الكامل"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="email"
+        id="email"
+        class="form-input"
+        name="user_email"
+        placeholder="البريد الإلكتروني"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="tel"
+        id="tel"
+        class="form-input"
+        name="user_phone"
+        placeholder="رقم الهاتف"
+      />
+    </div>
+    <div class="form-group">
+      <select class="form-input" id="select" name="inquiry_type" required>
+        <option value="" disabled selected>نوع الاستفسار</option>
+        <option value="technical">الدعم الفني</option>
+        <option value="order">استفسار عن طلب</option>
+        <option value="quote">طلب عرض سعر</option>
+        <option value="maintenance">طلب صيانة</option>
+        <option value="complaint">شكوى</option>
+        <option value="other">أخرى</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-input"
+        name="message"
+        id="message"
+        rows="5"
+        placeholder="تفاصيل الرسالة"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" id="submit" class="submit-btn">إرسال الرسالة</button>
+    <div class="success-message" id="successMsg">
+      ✅ تم إرسال رسالتك بنجاح! سنرد عليك خلال 24 ساعة.
+    </div>
+  </form>
+
+  <script>
+    function sendEmail() {
+      const btn = document.getElementById("submit");
+      btn.disabled = true;
+      btn.textContent = "يتم الإرسال...";
+
+      emailjs.send("service_2qj46mm", "template_cgtt6xa", {
+        user_name: document.getElementById("name").value,
+        user_email: document.getElementById("email").value,
+        user_phone: document.getElementById("tel").value,
+        inquiry_type: document.getElementById("select").value,
+        message: document.getElementById("message").value,
+      })
+      .then(function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+        document.getElementById("successMsg").style.display = "block";
+        btn.disabled = false;
+        btn.textContent = "إرسال الرسالة";
+        document.querySelector("form").reset();
+      }, function (error) {
+        console.log("FAILED...", error);
+        alert("❌ حدث خطأ أثناء إرسال الرسالة، حاول مجددًا.");
+        btn.disabled = false;
+        btn.textContent = "إرسال الرسالة";
+      });
+    }
+  </script>
+</body>
+</html>
